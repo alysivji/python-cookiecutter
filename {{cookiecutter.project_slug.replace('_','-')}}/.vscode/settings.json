@@ -1,0 +1,17 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "python.pythonPath":"/Users/alysivji/.virtualenvs/{{ cookiecutter.venv_name }}/bin/python",
+    "code-runner.executorMap": {
+        "python": "/Users/alysivji/.virtualenvs/{{ cookiecutter.venv_name }}/bin/python"
+    },
+
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.pep8Enabled": false,
+    "python.linting.flake8Args": [
+            ""
+        ],
+
+    "workbench.colorTheme": "Dracula Soft"
+}

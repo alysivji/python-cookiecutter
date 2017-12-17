@@ -1,1 +1,3 @@
-# sivji-python-cookiecutter
+# Python Cookiecutter
+
+Bootstrap a Python project within sections.
