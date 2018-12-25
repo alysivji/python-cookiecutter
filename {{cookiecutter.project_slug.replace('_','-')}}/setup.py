@@ -25,7 +25,7 @@ with open("README.md") as f:
 
 setup(
     name='{{ cookiecutter.project_slug.replace('_','-') }}',
-    version=find_version("falcon_apispec", "_version.py"),
+    version=find_version("{{cookiecutter.project_slug}}", "_version.py"),
 
     author='{{ cookiecutter.author }}',
     author_email='{{ cookiecutter.author_email }}',
