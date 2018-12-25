@@ -3,12 +3,15 @@ import os
 import re
 from setuptools import setup, find_packages
 
-here = os.path.abspath(os.path.dirname(__file__))
 
+############
+# Supporting
+############
+with open("README.md") as f:
+    long_description = f.read()
 
-def read(*parts):
-    with codecs.open(os.path.join(here, *parts), 'r') as fp:
-        return fp.read()
+with open("requirements.txt") as f:
+    dependencies = f.read().splitlines()
 
 
 def find_version(*file_paths):
@@ -20,21 +23,27 @@ def find_version(*file_paths):
     raise RuntimeError("Unable to find version string.")
 
 
-with open("README.md") as f:
-    long_description = f.read()
+def read(*parts):
+    here = os.path.abspath(os.path.dirname(__file__))
+    with codecs.open(os.path.join(here, *parts), "r") as fp:
+        return fp.read()
 
+
+#######
+# Build
+#######
 setup(
-    name='{{ cookiecutter.project_slug.replace('_','-') }}',
-    version=find_version("{{cookiecutter.project_slug}}", "_version.py"),
+    name="{{ cookiecutter.project_slug.replace('_','-') }}",
+    version=find_version("{{ cookiecutter.project_slug }}", "__version__.py"),
 
-    author='{{ cookiecutter.author }}',
-    author_email='{{ cookiecutter.author_email }}',
+    author="{{ cookiecutter.author }}",
+    author_email="{{ cookiecutter.author_email }}",
 
-    description='{{ cookiecutter.project_description }}',
+    description="{{ cookiecutter.project_description }}",
     long_description=long_description,
-    long_description_content_type='text/markdown',
+    long_description_content_type="text/markdown",
 
-    url='https://github.com/{{ cookiecutter.github_id }}/{{ cookiecutter.project_slug.replace('_','-') }}',
+    url="https://github.com/{{ cookiecutter.github_id }}/{{ cookiecutter.project_slug.replace('_','-') }}",
 
     classifiers=[
         "Intended Audience :: Developers",
@@ -46,9 +55,9 @@ setup(
     ],
     keywords="",
 
-    install_requires=[''],
-    packages=find_packages(exclude=['tests', ]),
-    test_suite='tests',
+    install_requires=dependencies,
+    packages=find_packages(exclude=["tests", ]),
+    test_suite="tests",
 
     zip_safe=False,
 )
