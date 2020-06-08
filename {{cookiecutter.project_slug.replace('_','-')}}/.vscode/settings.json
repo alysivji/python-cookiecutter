@@ -1,17 +1,4 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-    "python.pythonPath":"/Users/alysivji/.virtualenvs/{{ cookiecutter.venv_name }}/bin/python",
-
-    "python.jediEnabled": true,
-    "python.linting.enabled": true,
-    "python.linting.mypyEnabled": false,
-    "python.linting.pylintEnabled": false,
-    "python.linting.flake8Enabled": true,
-    "python.linting.flake8Args": [
-        "--max-line-length=88",
-        "--ignore=E203,W503"
-    ],
-
-    "python.formatting.blackPath": "/Users/alysivji/.virtualenvs/code_everyday370/bin/black",
-    "python.formatting.provider": "black",
+    "python.pythonPath":"venv/bin/activate"
 }
